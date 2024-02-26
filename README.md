@@ -1,3 +1,11 @@
+This is a simple modification to the common debug module used in NodeJS. It changes the type to a module and changes the requires/module.exports to import/exports.
+
+I wanted to use this for debugging, but couldn't have it hogging the terminal window (working on a terminal dashboard). So if you `export DEBUG_FD=my_fifo` before running it, it will create the named pipe `my_fifo` (if it doesn't exist already) and write to that. 
+This means you can just `tall -f my_fifo` and see the output from a different terminal. 
+
+*Note*: I only made changes to the node.js and common.js files. I didn't touch the browser.js, and didn't do much testing other than the basics (just did this in an afternoon).
+-----
+
 # debug
 [![Build Status](https://travis-ci.org/debug-js/debug.svg?branch=master)](https://travis-ci.org/debug-js/debug)  [![Coverage Status](https://coveralls.io/repos/github/debug-js/debug/badge.svg?branch=master)](https://coveralls.io/github/debug-js/debug?branch=master)  [![Slack](https://visionmedia-community-slackin.now.sh/badge.svg)](https://visionmedia-community-slackin.now.sh/) [![OpenCollective](https://opencollective.com/debug/backers/badge.svg)](#backers)
 [![OpenCollective](https://opencollective.com/debug/sponsors/badge.svg)](#sponsors)

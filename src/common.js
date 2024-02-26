@@ -4,14 +4,16 @@
  * implementations of `debug()`.
  */
 
-function setup(env) {
+import ms from 'ms';
+
+export default function setup(env) {
 	createDebug.debug = createDebug;
 	createDebug.default = createDebug;
 	createDebug.coerce = coerce;
 	createDebug.disable = disable;
 	createDebug.enable = enable;
 	createDebug.enabled = enabled;
-	createDebug.humanize = require('ms');
+	createDebug.humanize = ms
 	createDebug.destroy = destroy;
 
 	Object.keys(env).forEach(key => {
@@ -270,5 +272,3 @@ function setup(env) {
 
 	return createDebug;
 }
-
-module.exports = setup;

@@ -1,6 +1,7 @@
 {
   "name": "debug",
   "version": "4.3.4",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git://github.com/debug-js/debug.git"
@@ -31,6 +32,8 @@
     "test:coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
+    "mkfifo": "^2.1.0",
     "ms": "2.1.2"
   },
   "devDependencies": {
